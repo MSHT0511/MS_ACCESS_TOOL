@@ -1,14 +1,14 @@
-Attribute VB_Name = "ExportVbaCode"
+Attribute VB_Name = "_4Developer-Helper-OutputVbaCodes"
 Option Compare Database
-'// TODO ADD COMMENT
-Public Function ExportVbaProgramCode()
+
+Public Function OutputCodes()
 
   Dim vbcmp As Object
   Dim strFileName As String
   Dim strExt As String
   Set dbs = CurrentDb
 
-  savepath = CurrentProject.Path & "\_VBA_" & Mid(dbs.Name, InStrRev(dbs.Name, "\") + 1) & "\"
+  savepath = CurrentProject.path & "\_VBA_" & mId(dbs.Name, InStrRev(dbs.Name, "\") + 1) & "\"
   
     If Dir(savepath, vbDirectory) = "" Then
         MkDir savepath
@@ -35,5 +35,5 @@ Public Function ExportVbaProgramCode()
   Next vbcmp
   
   Set dbs = Nothing
-  MsgBox "プログラムコード出力完了"
+MsgBox "プログラムコード出力完了"
 End Function
